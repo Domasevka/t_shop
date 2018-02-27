@@ -1,0 +1,111 @@
+doctype html
+html(lang='en')
+  head
+    meta(charset='UTF-8')
+    title t_shop
+    meta(name='viewport', content='width=device-width,initial-scale=1')
+    link(rel='stylesheet', href='../bower_components/bootstrap/dist/css/bootstrap.min.css')
+    link(rel='stylesheet', href='styles/main.css')
+  body
+    include pug/helpers/_mixins.pug
+    header.header
+      nav.navbar
+        .container
+          .row
+            .col-sm-6.row-flex.navbar__column
+              a(href='#').navbar__brand
+                img(src="img/logo.jpg" width="75" height="46")
+              ul.list-inline.navbar__list
+                li.active.list-inline-item.navbar__item
+                  a(href='#').navbar__item-link Men
+                li.list-inline-item.navbar__item
+                  a(href='#').navbar__item-link Women
+                li.list-inline-item.navbar__item
+                  a(href='#').navbar__item-link Kids
+                li.list-inline-item.navbar__item
+                  a(href='#').navbar__item-link Accessories
+            .col-sm-6.row-flex.navbar__column
+              ul.list-inline.product__list
+                li.list-inline-item.product__item
+                  +icon('search-symbol', 'main_mod')
+                  span Search
+                li.list-inline-item.product__item.product__cart.active
+                  +icon('bag-outline', 'main_mod')
+                  span.product__cart_counter 1
+                li.list-inline-item.product__item
+                  a(href='#')
+                    +icon('bar-menu', 'main_mod')
+      .circle
+
+    section.name
+      .container
+        .row-flex
+          .name__inner
+            h5.name__title.name__title_main New Collection
+            h2.name__title.name__title_bg New York<br> Colorblock Tank
+      .name_line.line.line_bottom
+
+    section.product
+      .container
+        .row
+          .col-md-6.product__col
+            .product__wrap.product__wrap_first
+              p.lead.product__text Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
+                | et dolore
+              #carouselExampleControls.carousel.slide.product__slider(data-ride='carousel')
+                .carousel-inner
+                  .carousel-item.active
+                    img.d-block(src='img/tshort.png', alt='First slide')
+                    .carousel-item__descr
+                      span.carousel-item__name pharrell williams
+                      span.carousel-item__text NY Colorblock Top
+                      span.carousel-item__price $299
+                  .carousel-item
+                    img.d-block(src='img/tshort.png', alt='Second slide')
+                  .carousel-item
+                    img.d-block(src='img/tshort.png', alt='Third slide')
+                a.carousel-control-prev.icon.icon_light(href='#carouselExampleControls', role='button', data-slide='prev')
+                  //-span.carousel-control-prev-icon(aria-hidden='true')
+                  span.sr-only Previous
+                a.carousel-control-next.icon.icon_dark(href='#carouselExampleControls', role='button', data-slide='next')
+                  //-pan.carousel-control-next-icon(aria-hidden='true')
+                  span.sr-only Next
+
+          .image
+            img(src="img/girl.png")
+          .line
+
+          .col-md-6.product__col
+            .product__wrap
+              ul.list-unstyled.list-inline.product__info
+                li.size
+                  .dropdown
+                    button#dropdownMenuButton.btn.btn-secondary.dropdown-toggle.product-btn(type='button', data-toggle='dropdown', aria-haspopup='true', aria-expanded='false')
+                      span.product-btn__tex.line.line_right M
+                      span Medium size
+                    .dropdown-menu(aria-labelledby='dropdownMenuButton')
+                      a.dropdown-item(href='#') Action
+                      a.dropdown-item(href='#') Another action
+                      a.dropdown-item(href='#') Something else here
+                li.size
+                  .dropdown
+                    button#dropdownMenu.btn.btn-secondary.dropdown-toggle.product-btn.product-btn_sm(type='button', data-toggle='dropdown', aria-haspopup='true', aria-expanded='false')
+                      | 1
+                    .dropdown-menu(aria-labelledby='dropdownMenu')
+                      a.dropdown-item(href='#') 1
+                      a.dropdown-item(href='#') 2
+                      a.dropdown-item(href='#') 3
+              p.lead.product__text.product__text_second Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
+                | et dolore
+              form
+                .form-group.product__form
+                  label(for='exampleInputEmail1')
+                  input#exampleInputEmail1.form-control.product__input(type='email', aria-describedby='emailHelp', placeholder='Delivery')
+                  button.btn.product-btn__input(type='submit')
+                .form-group.product__form.product__form_second
+                  label(for='exampleInputPassword1')
+                  input#exampleInputPassword1.form-control.product__input.product__input_second(type='password', placeholder='Return')
+                  button.btn.product-btn__input(type='submit')
+                button.btn.btn_unique(type='submit') add to cart
+  block scripts
+    script(src='../bower_components/bootstrap/dist/js/bootstrap.min.js')

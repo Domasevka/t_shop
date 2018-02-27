@@ -1,0 +1,26 @@
+.icon {
+  display: inline-block;
+  height: 33px;
+  width: 33px;
+  vertical-align: middle;
+  opacity: 0.8;
+  &:hover {
+    opacity: 1;
+  }
+}
+
+.main_mod {
+  color: $black;
+}
+
+.icon-search-symbol {
+  height: 20px;
+  width: 20px;
+  margin-right: 10px;
+}
+
+.icon-bar-menu {
+  height: 25px;
+  width: 25px;
+}
+
